@@ -1,0 +1,497 @@
+:root {
+
+    --red: #A80A1C;
+
+    --brown: #633A35;
+
+    --white: #F7F3ED;
+
+    --font-heading: "Climate Crisis", sans-serif;
+
+    --font-body: "Poppins", sans-serif;
+
+    --font-nav: "Inter", sans-serif;
+
+}
+
+
+/* =========================================
+   CONTACT POPUP
+========================================= */
+
+.contact-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+}
+
+
+/* =========================================
+   ACTIVE STATE
+========================================= */
+
+.contact-modal.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.contact-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #262626;
+
+    backdrop-filter: blur(5px);
+
+}
+
+
+/* =========================================
+   POPUP
+========================================= */
+
+.contact-popup {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(600px, 90vw);
+
+    background: var(--white);
+
+    border-radius: 24px;
+
+    border: 2px solid var(--brown);
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.2);
+
+    overflow: hidden;
+
+    transform: translateY(25px) scale(0.97);
+
+    transition:
+        transform 0.35s ease;
+
+}
+
+
+.contact-modal.active .contact-popup {
+
+    transform: translateY(0) scale(1);
+
+}
+
+
+/* =========================================
+   RED TOP
+========================================= */
+
+.contact-popup::before {
+
+    content: "";
+
+    display: block;
+
+    width: 100%;
+
+    height: 12px;
+
+    background: var(--red);
+
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.contact-close {
+
+    position: absolute;
+
+    top: 22px;
+
+    right: 24px;
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border: 2px solid var(--brown);
+
+    border-radius: 50%;
+
+    background: var(--white);
+
+    color: var(--red);
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.contact-close:hover {
+
+    background: var(--red);
+
+    color: var(--white);
+
+    transform: rotate(90deg);
+
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.contact-popup-content {
+
+    padding: 55px 60px 45px;
+
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.contact-eyebrow {
+
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: var(--red);
+
+    font-family: var(--font-body);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.contact-popup h2 {
+
+    margin: 0 0 22px;
+
+    color: #262626;
+
+    font-family: var(--font-body);
+
+    font-size: 60px;
+
+    line-height: 0.95;
+
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.contact-intro {
+
+    max-width: 460px;
+
+    margin: 0 0 35px;
+
+    color: #262626;
+
+    font-family: var(--font-body);
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================
+   CONTACT LINKS
+========================================= */
+
+.contact-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+
+/* =========================================
+   CONTACT LINK
+========================================= */
+
+.popup-contact-link {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    width: 100%;
+
+    padding: 15px 18px;
+
+    border: 2px solid var(--brown);
+
+    border-radius: 14px;
+
+    background: transparent;
+
+    color: #262626;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        border-color 0.2s ease;
+
+}
+
+
+.popup-contact-link:hover {
+
+    background: var(--brown);
+
+    border-color: var(--brown);
+
+    transform: translateX(5px);
+
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.popup-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: var(--red);
+
+    color: var(--white);
+
+    font-size: 18px;
+
+}
+
+
+/* =========================================
+   CONTACT TEXT
+========================================= */
+
+.popup-contact-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+}
+
+
+.popup-contact-text small {
+
+    color: #262626;
+
+    font-family: var(--font-body);
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+}
+
+
+.popup-contact-text span {
+
+    color: #111111;
+
+    font-family: var(--font-body);
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
+   FOOTER TEXT
+========================================= */
+
+.contact-popup-footer {
+
+    margin-top: 35px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid var(--brown);
+
+    color: #262626;
+
+    font-family: var(--font-body);
+
+    font-size: 13px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .contact-modal {
+
+        padding: 20px;
+
+    }
+
+
+    .contact-popup {
+
+        width: 100%;
+
+        border-radius: 18px;
+
+    }
+
+
+    .contact-popup-content {
+
+        padding: 45px 25px 30px;
+
+    }
+
+
+    .contact-close {
+
+        top: 17px;
+
+        right: 17px;
+
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 25px;
+
+    }
+
+    .contact-eyebrow {
+
+        font-size: 11px;
+
+    }
+
+    .contact-popup h2 {
+
+        font-size: 38px;
+
+    }
+
+    .contact-intro {
+
+        font-size: 14px;
+
+    }
+
+    .popup-contact-text span {
+
+        font-size: 14px;
+
+    }
+
+}

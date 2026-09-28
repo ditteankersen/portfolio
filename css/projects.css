@@ -726,11 +726,78 @@ body {
 
     border-bottom: 1px solid var(--brown);
 
-    display: grid;
+    padding: 42px 40px 46px;
 
+    display: flex;
+    flex-direction: column;
     align-items: center;
 
-    padding: 26px 20px;
+    background-color: var(--white);
+}
+
+
+/* ==================================================
+   BILLEDER
+================================================== */
+
+.reset-case .case-images {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    margin-bottom: 32px;
+}
+
+
+/* Alle billeder */
+
+.reset-case .case-images img {
+    display: block;
+
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* ==================================================
+   01 – TO BILLEDER
+================================================== */
+
+.reset-images-01 {
+    gap: 32px;
+}
+
+
+.reset-images-01 img {
+    width: 230px;
+    max-width: 42%;
+}
+
+
+/* ==================================================
+   02 – ÉT BILLEDE
+================================================== */
+
+.reset-images-02 img {
+    width: 230px;
+    max-width: 100%;
+}
+
+
+/* ==================================================
+   03 – TO BILLEDER
+================================================== */
+
+.reset-images-03 {
+    gap: 32px;
+}
+
+
+.reset-images-03 img {
+    width: 230px;
+    max-width: 42%;
 }
 
 
@@ -738,11 +805,23 @@ body {
    TEKST
 ================================================== */
 
+.reset-case .case-text {
+    width: 100%;
+    max-width: 720px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+
 .reset-case .case-text h2 {
     margin: 0 0 14px;
 
     font-family: "Poppins", sans-serif;
-    font-size: 22px;
+    font-size: 28px;
     line-height: 1.15;
     font-weight: 700;
 
@@ -751,127 +830,17 @@ body {
 
 
 .reset-case .case-text p {
-    margin: 0;
-    max-width: 300px;
+    width: 100%;
+    max-width: 460px;
 
     font-family: "Inter", sans-serif;
-    font-size: 16px;
-    line-height: 1.08;
+    font-size: 18px;
+    line-height: 1.12;
     font-weight: 400;
-    
 
     color: #262626;
-}
 
-
-/* ==================================================
-   BILLEDER GENERELT
-================================================== */
-
-.reset-case img {
-    display: block;
-
-    width: 100%;
-    height: auto;
-}
-
-
-/* ==================================================
-   01 – RESET SOM APP
-================================================== */
-
-.reset-case-01 {
-    grid-template-columns: 43% 57%;
-
-    gap: 10px;
-
-    align-items: center;
-}
-
-
-.reset-case-01 .case-text {
-    padding-right: 5px;
-}
-
-
-.reset-images-01 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    gap: 20px;
-}
-
-
-.reset-images-01 img {
-    width: 43%;
-    max-width: 115px;
-}
-
-
-/* ==================================================
-   02 – HURTIG ONBOARDING
-================================================== */
-
-.reset-case-02 {
-    grid-template-columns: 48% 52%;
-
-    gap: 12px;
-
-    align-items: center;
-}
-
-
-.reset-images-02 {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-}
-
-
-.reset-images-02 img {
-    width: 72%;
-    max-width: 145px;
-}
-
-
-.reset-case-02 .case-text {
-    padding-left: 3px;
-}
-
-
-/* ==================================================
-   03 – MOTIVATION
-================================================== */
-
-.reset-case-03 {
-    grid-template-columns: 45% 55%;
-
-    gap: 10px;
-
-    align-items: center;
-}
-
-
-.reset-case-03 .case-text {
-    padding-right: 5px;
-}
-
-
-.reset-images-03 {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 12px;
-}
-
-
-.reset-images-03 img {
-    width: 43%;
-    max-width: 125px;
+    text-align: center;
 }
 
 
@@ -926,3 +895,4 @@ body {
     }
 
 }
+

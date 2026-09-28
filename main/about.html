@@ -1,57 +1,100 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Om mig – Ditte Ankersen</title>
 
-  <!-- Favicon -->
+
+    <!-- =========================
+         FAVICON
+    ========================== -->
+
     <link
         rel="icon"
         type="image/svg+xml"
-        href="images/favicon.svg" 
+        href="../images/favicon.svg"
     >
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- =========================
+         GOOGLE FONTS
+    ========================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="about.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+
+    <!-- =========================
+         CSS
+    ========================== -->
+
+    <!-- About page -->
+    <link
+        rel="stylesheet"
+        href="../css/about.css"
+    >
+
+    <!-- Navigation -->
+    <link
+        rel="stylesheet"
+        href="../css/nav.css"
+    >
+
+    <!-- Footer -->
+    <link
+        rel="stylesheet"
+        href="../css/footer.css"
+    >
+
+    <!-- Contact popup -->
+    <link
+        rel="stylesheet"
+        href="../css/contact.css"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
 </head>
+
 
 <body>
 
-   <!-- =========================
-             NAVIGATION
-        ========================== -->
-        <nav class="navbar">
 
-            <a href="index.html" class="logo-link" aria-label="Ditte forside">
-                <img
-                    src="images/logo.svg"
-                    alt="Ditte"
-                    class="logo"
-                >
-            </a>
-            
-            <div class="nav-links">
-                <a href="about.html">OM MIG</a>
-                <a href="index.html#projects">PROJEKTER</a>
-                <a href="ai.html">BRUG AF AI</a>
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
-                <a href="#contact" class="contact-button">
-                    KONTAKT MIG
-                </a>
-            </div>
+    <div id="nav-container"></div>
 
-        </nav> 
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
     <main>
 
         <section class="about-section">
@@ -90,27 +133,45 @@
 
                 </div>
 
+
                 <div class="about-image-wrapper">
-                    <img src="images/ditte.JPEG" alt="Portræt af Ditte">
+
+                    <img
+                        src="../images/ditte.JPEG"
+                        alt="Portræt af Ditte"
+                    >
+
                 </div>
 
             </div>
 
 
-            <!--SKILLS ACCORDION-->
+            <!-- =========================
+                 SKILLS ACCORDION
+            ========================== -->
 
             <div class="skills">
 
+
                 <!-- HARD SKILLS -->
+
                 <div class="skill-item">
 
-                    <button class="skill-header" type="button" aria-expanded="false">
+                    <button
+                        class="skill-header"
+                        type="button"
+                        aria-expanded="false"
+                    >
 
                         <span>Hard skills</span>
 
-                        <span class="arrow" aria-hidden="true"></span>
+                        <span
+                            class="arrow"
+                            aria-hidden="true"
+                        ></span>
 
                     </button>
+
 
                     <div class="skill-content">
 
@@ -135,15 +196,24 @@
 
 
                 <!-- SOFT SKILLS -->
+
                 <div class="skill-item">
 
-                    <button class="skill-header" type="button" aria-expanded="false">
+                    <button
+                        class="skill-header"
+                        type="button"
+                        aria-expanded="false"
+                    >
 
                         <span>Soft skills</span>
 
-                        <span class="arrow" aria-hidden="true"></span>
+                        <span
+                            class="arrow"
+                            aria-hidden="true"
+                        ></span>
 
                     </button>
+
 
                     <div class="skill-content">
 
@@ -171,21 +241,28 @@
         </section>
 
 
-
-        <!--QUOTES-->
+        <!-- =========================
+             QUOTES
+        ========================== -->
 
         <section class="quotes-section">
 
             <h2>Hvad siger andre om mig?</h2>
 
+
             <div class="quote-slider">
 
+
                 <!-- Venstre pil -->
+
                 <button
                     class="quote-arrow quote-prev"
                     type="button"
-                    aria-label="Forrige citat">
+                    aria-label="Forrige citat"
+                >
+
                     <span></span>
+
                 </button>
 
 
@@ -204,11 +281,16 @@
                 </div>
 
 
+                <!-- Højre pil -->
+
                 <button
                     class="quote-arrow quote-next"
                     type="button"
-                    aria-label="Næste citat">
+                    aria-label="Næste citat"
+                >
+
                     <span></span>
+
                 </button>
 
             </div>
@@ -217,7 +299,28 @@
 
     </main>
 
-    <script src="script.js"></script>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <div id="footer-container"></div>
+
+
+  <!-- =========================
+     JAVASCRIPT
+========================== -->
+
+<script src="../js/script.js"></script>
+
+<script src="../js/about.js"></script>
+
+<script src="../js/nav.js"></script>
+
+<script src="../js/contact.js"></script>
+
+<script src="../js/footer.js"></script>
+
 
 </body>
 </html>

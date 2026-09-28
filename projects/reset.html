@@ -1,69 +1,85 @@
 <!DOCTYPE html>
 <html lang="da">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Projekt – Reset App</title>
 
-    <!-- Favicon -->
+
+    <!-- =========================================
+         FAVICON
+    ========================================== -->
+
     <link
         rel="icon"
         type="image/svg+xml"
         href="../images/favicon.svg"
     >
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- =========================================
+         GOOGLE FONTS
+    ========================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
 
-    <!-- Fælles CSS til projektsider -->
-    <link rel="stylesheet" href="../projects.css">
+
+    <!-- =========================================
+         CSS
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../css/projects.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/footer.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/contact.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/nav.css"
+    >
 
 </head>
 
+
 <body>
 
-    <!-- =========================
+
+    <!-- =========================================
          NAVIGATION
-    ========================== -->
+    ========================================== -->
 
-    <nav class="navbar">
-
-        <a href="../index.html" class="logo-link" aria-label="Ditte forside">
-            <img
-                src="../images/logo.svg"
-                alt="Ditte"
-                class="logo"
-            >
-        </a>
-
-        <div class="nav-links">
-
-            <a href="../about.html">
-                OM MIG
-            </a>
-
-            <a href="../index.html#projects">
-                PROJEKTER
-            </a>
-
-            <a href="../ai.html">
-                BRUG AF AI
-            </a>
-
-            <a href="#contact" class="contact-button">
-                KONTAKT MIG
-            </a>
-
-        </div>
-
-    </nav>
+    <div id="nav-container"></div>
 
 
     <!-- ==================================================
@@ -102,12 +118,10 @@
 
             <div class="figma-wrapper reset-figma-wrapper">
 
-
-                   <iframe
-    src="https://embed.figma.com/proto/1q6zWXoM74ys4T12fw828q/Reset---Web-application?page-id=0%3A1&node-id=338-3845&m=draw&scaling=contain&content-scaling=fixed&starting-point-node-id=264%3A1412&embed-host=share"
-    allowfullscreen>
-</iframe>
-               
+                <iframe
+                    src="https://embed.figma.com/proto/1q6zWXoM74ys4T12fw828q/Reset---Web-application?page-id=0%3A1&node-id=338-3845&m=draw&scaling=contain&content-scaling=fixed&starting-point-node-id=264%3A1412&embed-host=share"
+                    allowfullscreen>
+                </iframe>
 
             </div>
 
@@ -119,6 +133,20 @@
         ================================================== -->
 
         <section class="project-case reset-case reset-case-01">
+
+            <div class="case-images reset-images-01">
+
+                <img
+                    src="../images/img1.svg"
+                    alt="Reset app – oversigt"
+                >
+
+                <img
+                    src="../images/img2.svg"
+                    alt="Reset app – reset"
+                >
+
+            </div>
 
             <div class="case-text">
 
@@ -135,21 +163,6 @@
                     hjemmet. Man kan også generere en hurtig to-do liste, hvis
                     hjemmet trænger til et reset.
                 </p>
-
-            </div>
-
-
-            <div class="case-images reset-images-01">
-
-                <img
-                    src="../images/img1.svg"
-                    alt="Reset app – oversigt"
-                >
-
-                <img
-                    src="../images/img2.svg"
-                    alt="Reset app – reset"
-                >
 
             </div>
 
@@ -170,7 +183,6 @@
                 >
 
             </div>
-
 
             <div class="case-text">
 
@@ -198,6 +210,20 @@
 
         <section class="project-case reset-case reset-case-03">
 
+            <div class="case-images reset-images-03">
+
+                <img
+                    src="../images/belønning.png"
+                    alt="Reset app – belønninger"
+                >
+
+                <img
+                    src="../images/konkurrence.png"
+                    alt="Reset app – konkurrence"
+                >
+
+            </div>
+
             <div class="case-text">
 
                 <h2>
@@ -216,24 +242,31 @@
 
             </div>
 
-
-            <div class="case-images reset-images-03">
-
-                <img
-                    src="../images/belønning.png"
-                    alt="Reset app – belønninger"
-                >
-
-                <img
-                    src="../images/konkurrence.png"
-                    alt="Reset app – konkurrence"
-                >
-
-            </div>
-
         </section>
 
+
     </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <div id="footer-container"></div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="../js/script.js"></script>
+
+    <script src="../js/nav.js"></script>
+
+    <script src="../js/contact.js"></script>
+
+    <script src="../js/footer.js"></script>
+
 
 </body>
 </html>

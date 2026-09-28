@@ -1,0 +1,327 @@
+:root {
+    --red: #A80A1C;
+    --brown: #633A35;
+    --white: #F7F3ED;
+
+    --font-heading: "Climate Crisis", sans-serif;
+    --font-body: "Poppins", sans-serif;
+    --font-nav: "Inter", sans-serif;
+} 
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+.site-footer {
+    width: 100%;
+    margin: 24px 0 0;
+
+    min-height: 230px;
+
+    background-color: var(--red);
+    color: var(--white);
+
+    display: grid;
+    grid-template-columns: 1fr 1.27fr 0.89fr;
+
+    padding: 30px 52px;
+
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* ==================================================
+   FOOTER – GENERELLE KOLONNER
+================================================== */
+
+.footer-column {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ==================================================
+   VENSTRE SIDE – LOGO
+================================================== */
+
+.footer-brand {
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-right: 40px;
+}
+
+
+/* Logo */
+
+.footer-logo {
+    display: block;
+
+    width: 255px;
+    height: auto;
+}
+
+
+/* Streg under logo */
+
+.footer-logo-line {
+    width: 255px;
+    height: 3px;
+
+    background-color: var(--white);
+
+    margin-top: 9px;
+    margin-bottom: 7px;
+}
+
+
+/* Tekst under logo */
+
+.footer-brand p {
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    color: var(--white);
+}
+
+
+/* ==================================================
+   MIDTEN – KONTAKTOPLYSNINGER
+================================================== */
+.footer-contact {
+    justify-content: center;
+    align-items: center;
+
+    padding-left: 30px;
+    padding-right: 30px;
+
+    border-left: 1px solid var(--white);
+    border-right: 1px solid var(--white);
+
+    gap: 14px;
+}
+
+
+.footer-contact-item {
+    width: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 20px;
+}
+
+
+/* Kontakttekst */
+
+.footer-contact-item span {
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    color: var(--white);
+
+    white-space: nowrap;
+}
+
+
+/* ==================================================
+   KONTAKT IKONER
+================================================== */
+
+.footer-icon {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    border: 2px solid var(--white);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Hvis ikonerne er billeder */
+
+.footer-icon img {
+    width: 21px;
+    height: 21px;
+
+    object-fit: contain;
+}
+
+
+/* Hvis der stadig bruges Font Awesome */
+
+.footer-icon i {
+    color: var(--white);
+
+    font-size: 20px;
+}
+
+
+/* ==================================================
+   HØJRE SIDE – CTA
+================================================== */
+.footer-cta {
+    justify-content: center;
+    align-items: center;
+
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+.footer-cta p {
+    width: 280px;
+
+    margin: 0 0 22px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.45;
+
+    color: var(--white);
+
+    text-align: left;
+}
+
+
+/* ==================================================
+   KONTAKT-KNAP
+================================================== */
+
+.footer-contact-button {
+    width: 280px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid var(--white);
+    border-radius: 999px;
+
+    background-color: transparent;
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.footer-contact-button:hover {
+    background-color: var(--white);
+    color: var(--red);
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+    .site-footer {
+        grid-template-columns: 1fr 1.2fr 1fr;
+
+        padding: 28px 35px;
+    }
+
+    .footer-logo {
+        width: 210px;
+    }
+
+    .footer-logo-line {
+        width: 210px;
+    }
+
+    .footer-contact-item span {
+        font-size: 14px;
+    }
+
+    .footer-cta p {
+        width: 190px;
+        font-size: 13px;
+    }
+}
+
+
+/* ==================================================
+   MOBIL
+================================================== */
+
+@media (max-width: 650px) {
+
+    .site-footer {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+
+        padding: 35px 25px;
+
+        border-radius: 25px 25px 0 0;
+    }
+
+
+    .footer-brand {
+        align-items: center;
+
+        padding-right: 0;
+    }
+
+
+    .footer-logo {
+        width: 220px;
+    }
+
+
+    .footer-logo-line {
+        width: 220px;
+    }
+
+
+    .footer-contact {
+        border-left: none;
+        border-right: none;
+
+        border-top: 1px solid var(--white);
+        border-bottom: 1px solid var(--white);
+
+        padding: 25px 0;
+    }
+
+
+    .footer-cta {
+        padding: 0;
+    }
+
+
+    .footer-cta p {
+        width: 220px;
+    }
+}
