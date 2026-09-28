@@ -1,0 +1,617 @@
+/*GENERELT */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F7F3ED;
+    color: #171717;
+
+    font-family: "Montserrat", sans-serif;
+
+    min-height: 100vh;
+}
+
+:root {
+    --red: #A80A1C;
+    --brown: #633A35;
+    --white: #F7F3ED;
+
+    --font-heading: "Climate Crisis", sans-serif;
+    --font-body: "Poppins", sans-serif;
+    --font-nav: "Inter", sans-serif;
+} 
+
+/* ==================================================
+   NAVIGATION
+================================================== */
+
+.navbar {
+    width: 100%;
+    height: 55px;
+
+    background-color: var(--red);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 16px 0 29px;
+}
+
+
+/* Logo */
+
+.logo-link {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+}
+
+.logo {
+    display: block;
+    width: 63px;
+    height: auto;
+}
+
+
+/* Navigation links */
+
+.nav-links {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 29px;
+}
+
+.nav-links a {
+    font-family: inter, sans-serif;  
+    font-size: 14px;
+    font-weight: 600;
+
+    color: var(--white);
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.nav-links a:not(.contact-button) {
+    display: inline-block;
+    transition:
+        color 0.25s ease,
+        transform 0.3s ease;
+}
+
+.nav-links a:not(.contact-button):hover {
+    transform: translateX(5px);
+}
+
+
+/* Contact button */
+
+.contact-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 43px;
+    padding: 0 17px;
+
+    border: 2px solid var(--white);
+    border-radius: 999px;
+
+    color: var(--white);
+}
+
+
+/* Contact button hover */
+
+.contact-button:hover {
+    background-color: var(--white);
+    color: var(--red);
+}
+
+/* ==================================================
+   AI PAGE
+================================================== */
+
+.ai-page {
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: var(--white);
+    color: #262626;
+
+    overflow: hidden;
+}
+
+
+/* ==================================================
+   AI INTRO
+================================================== */
+
+.ai-intro {
+    width: 100%;
+
+    padding: 65px 0 70px;
+
+    background-color: var(--white);
+} 
+
+
+/* ==================================================
+   INTRO CONTENT
+================================================== */
+
+.ai-intro-content {
+    width: 100%;
+
+    padding-left: 20px;
+}
+
+
+/* ==================================================
+   EYEBROW
+================================================== */
+
+.ai-eyebrow {
+    margin: 0 0 35px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    line-height: 1.15;
+    font-weight: 700;
+
+    color: var(--brown);
+}
+
+
+/* ==================================================
+   MAIN TITLE
+================================================== */
+
+.ai-main-title {
+    margin: 0;
+    Width: 40%;
+
+    font-family: "Climate Crisis", sans-serif;
+
+    font-size: 56px;
+    line-height: 0.82;
+    font-weight: 400;
+
+    color: var(--red);
+
+    letter-spacing: -1px;
+
+   transform: scaleX(1.25) scaleY(1.25);
+    transform-origin: left center; 
+}
+
+
+/* ==================================================
+   TEXT SECTION
+================================================== */
+
+.ai-text-section {
+    width: 100%;
+
+    background-color: var(--white);
+}
+
+
+.ai-text-content {
+    width: 100%;
+    padding: 15px 0 20px;
+}
+
+
+/* ==================================================
+   BROWN LINES
+================================================== */
+
+.ai-line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--brown);
+    opacity: 0.65;
+}
+
+
+/* ==================================================
+   SECTION TITLE
+================================================== */
+
+.ai-section-title {
+    margin: 55px auto 0;
+    width: min(650px, 85%);
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 27px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--brown);
+}
+
+
+/* ==================================================
+   INTRO TEXT
+================================================== */
+
+.ai-intro-text {
+    width: min(520px, 72%);
+
+    margin: 32px auto 55px;
+
+    text-align: center;
+
+    font-family: "Inter", sans-serif;
+    font-size: 22px;
+    line-height: 1.28;
+    font-weight: 400;
+
+    color: #262626;
+}
+
+
+/* ==================================================
+   EXAMPLES SECTION
+================================================== */
+
+.ai-examples {
+    width: 100%;
+
+    padding: 32px 0 70px;
+}
+
+
+/* ==================================================
+   EXAMPLES TITLE
+================================================== */
+
+.ai-examples-title {
+    margin: 0;
+
+    text-align: center;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 700;
+
+    color: var(--brown);
+}
+
+
+/* ==================================================
+   CAROUSEL
+================================================== */
+
+.ai-carousel {
+    width: 100%;
+
+    margin-top: 50px;
+
+    display: grid;
+    grid-template-columns: 90px minmax(0, 650px) 90px;
+
+    justify-content: center;
+    align-items: center;
+
+    column-gap: 30px;
+}
+
+
+/* ==================================================
+   CAROUSEL CONTENT
+================================================== */
+
+.ai-carousel-content {
+    width: 100%;
+
+    position: relative;
+}
+
+
+/* ==================================================
+   SLIDE
+================================================== */
+
+.ai-slide {
+    width: 100%;
+
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.ai-slide.active {
+    display: flex;
+}
+
+
+/* ==================================================
+   IMAGE
+================================================== */
+
+.ai-image-wrapper {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.ai-image-wrapper img {
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+
+    height: 300px;
+
+    object-fit: contain;
+}
+
+
+/* ==================================================
+   SLIDE TITLE
+================================================== */
+
+.ai-slide-title {
+    margin: 38px 0 0;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 38px;
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: var(--red);
+}
+
+
+/* ==================================================
+   SLIDE TEXT
+================================================== */
+
+.ai-slide-text {
+    width: min(600px, 90%);
+
+    margin: 25px auto 0;
+
+    font-family: "Inter", sans-serif;
+    font-size: 19px;
+    line-height: 1.25;
+    font-weight: 400;
+
+    color: #262626;
+}
+
+
+/* ==================================================
+   ARROWS
+================================================== */
+
+.ai-arrow {
+    width: 55px;
+    height: 70px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+
+.ai-arrow span {
+    width: 18px;
+    height: 18px;
+
+    display: block;
+
+    border-top: 2px solid var(--brown);
+    border-right: 2px solid var(--brown);
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+/* Left arrow */
+
+.ai-arrow-left span {
+    transform: rotate(-135deg);
+}
+
+
+/* Right arrow */
+
+.ai-arrow-right span {
+    transform: rotate(45deg);
+}
+
+
+/* Hover */
+
+.ai-arrow-left:hover span {
+    transform: rotate(-135deg) translate(3px, 3px);
+}
+
+
+.ai-arrow-right:hover span {
+    transform: rotate(45deg) translate(3px, 3px);
+}
+
+
+/* ==================================================
+   DOTS
+================================================== */
+
+.ai-dots {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 55px;
+}
+
+
+.ai-dot {
+    width: 13px;
+    height: 13px;
+
+    padding: 0;
+
+    border: 2px solid var(--brown);
+    border-radius: 50%;
+
+    background-color: transparent;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.ai-dot.active {
+    background-color: var(--brown);
+}
+
+
+.ai-dot:hover {
+    transform: scale(1.1);
+}
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 900px) {
+
+    .ai-intro {
+        padding-top: 55px;
+    }
+
+
+    .ai-main-title {
+        font-size: clamp(46px, 10vw, 80px);
+        padding-left: 20px;
+    }
+
+
+    .ai-intro-text {
+        width: 80%;
+        font-size: 19px;
+        padding: 45px 0;
+    }
+
+
+    .ai-examples {
+        padding-top: 28px;
+    }
+
+
+    .ai-examples-title {
+        font-size: 24px;
+        padding: 0 20px;
+    }
+
+
+    .ai-carousel {
+        grid-template-columns: 55px minmax(0, 1fr) 55px;
+
+        column-gap: 5px;
+
+        padding: 0 15px;
+    }
+
+
+    .ai-slide-title {
+        font-size: 32px;
+    }
+
+
+    .ai-slide-text {
+        font-size: 17px;
+        width: 90%;
+    }
+
+
+    .ai-image-wrapper img {
+        height: 300px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .ai-intro {
+        padding: 40px 0 45px;
+    }
+
+    .ai-intro-content {
+        padding-left: 20px;
+    }
+
+    .ai-eyebrow {
+        font-size: 17px;
+        margin-bottom: 14px;
+    }
+
+    .ai-main-title {
+        font-size: 43px;
+        line-height: 0.84;
+        letter-spacing: -0.5px;
+    }
+
+    .ai-section-title {
+        width: 82%;
+
+        margin-top: 32px;
+
+        font-size: 19px;
+    }
+
+    .ai-intro-text {
+        width: 72%;
+
+        margin-top: 23px;
+        margin-bottom: 32px;
+
+        font-size: 15px;
+        line-height: 1.2;
+    }
+}

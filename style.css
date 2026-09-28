@@ -2,7 +2,6 @@
 /* ==================================================
    RESET
 ================================================== */
-
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +17,6 @@ body {
     color: #633A35;
     overflow-x: hidden;
 }
-
 
 /* ==================================================
    VARIABLES
@@ -145,7 +143,7 @@ body {
 
 .hero {
     width: 100%;
-    height: 548px;
+    height: 650px;
 
     display: grid;
     grid-template-columns: 50% 50%;
@@ -405,7 +403,7 @@ body.loaded .hero-name {
     margin: 52px 0 0;
 
     font-family: "Inter", sans-serif;
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.2;
     font-weight: 400;
 
@@ -842,147 +840,5 @@ body.loaded .hero-name {
         transition: none;
     }
 
-}
+} 
 
-/* ==================================================
-   RESPONSIVE
-================================================== */
-
-@media (max-width: 900px) {
-
-    .navbar {
-        padding-left: 20px;
-        padding-right: 12px;
-    }
-
-    .nav-links {
-        gap: 18px;
-    }
-
-    .nav-links a {
-        font-size: 12px;
-    }
-
-    .hero {
-        height: 500px;
-    }
-
-    .hero-content {
-        padding: 30px 22px;
-    }
-
-    .hero-heading {
-        font-size: 24px;
-    }
-
-    .hero-name {
-        left: 22px;
-        font-size: 12vw;
-        letter-spacing: -4px;
-    }
-
-    .marquee-content span {
-        font-size: 18px;
-    }
-}
-
-
-/* ==================================================
-   MOBILE
-================================================== */
-
-@media (max-width: 650px) {
-
-    .navbar {
-        height: 55px;
-        padding: 0 12px 0 18px;
-    }
-
-    .logo {
-        width: 54px;
-    }
-
-    .nav-links {
-        gap: 10px;
-    }
-
-    .nav-links a:not(.contact-button) {
-        display: none;
-    }
-
-    .contact-button {
-        height: 38px;
-        padding: 0 13px;
-        font-size: 11px !important;
-    }
-
-
-    .hero {
-        grid-template-columns: 1fr;
-        height: auto;
-    }
-
-
-    .hero-image {
-        height: 55vh;
-        min-height: 350px;
-    }
-
-
-    .hero-content {
-        height: 350px;
-        padding: 28px 20px;
-    }
-
-
-    .hero-heading {
-        font-size: 24px;
-    }
-
-
-    .hero-name {
-        left: 20px;
-        bottom: 45px;
-
-        font-size: 22vw;
-        letter-spacing: -3px;
-    }
-
-
-    .marquee {
-        height: 48px;
-    }
-
-
-    .marquee-content span {
-        font-size: 16px;
-    }
-}
-
-
-/* ==================================================
-   REDUCED MOTION
-================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
-    .hero-image,
-    .hero-heading,
-    .hero-name {
-        transition: none;
-        opacity: 1;
-        transform: none;
-    }
-
-    .marquee-track {
-        animation: none;
-    }
-
-    .contact-button {
-        transition: none;
-    }
-}
