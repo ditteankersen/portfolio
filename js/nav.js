@@ -4,10 +4,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!navContainer) return;
 
   /* =========================================
-       FIND DEN RIGTIGE STI TIL NAV.HTML
+       FIND UD AF HVOR SIDEN LIGGER
     ========================================== */
 
   const isProjectPage = window.location.pathname.includes("/projects/");
+
+  /* =========================================
+       FIND DEN RIGTIGE STI TIL NAV.HTML
+    ========================================== */
 
   const navPath = isProjectPage
     ? "../../components/nav.html"
@@ -30,36 +34,76 @@ document.addEventListener("DOMContentLoaded", () => {
       navContainer.innerHTML = html;
 
       /* =========================================
-               RET LINKS PÅ PROJEKTSIDER
+               FIND NAVIGATIONENS ELEMENTER
+            ========================================== */
+
+      const logoLink = navContainer.querySelector(".logo-link");
+
+      const logo = navContainer.querySelector(".logo");
+
+      const aboutLink = navContainer.querySelector(".nav-about");
+
+      const projectsLink = navContainer.querySelector(".nav-projects");
+
+      const aiLink = navContainer.querySelector(".nav-ai");
+
+      /* =========================================
+               NORMALE SIDER
+               
+               index.html
+               about.html
+               ai.html
+            ========================================== */
+
+      if (!isProjectPage) {
+        if (logoLink) {
+          logoLink.href = "index.html";
+        }
+
+        if (logo) {
+          logo.src = "../images/logo.svg";
+        }
+
+        if (aboutLink) {
+          aboutLink.href = "about.html";
+        }
+
+        if (projectsLink) {
+          projectsLink.href = "index.html#projects";
+        }
+
+        if (aiLink) {
+          aiLink.href = "ai.html";
+        }
+      }
+
+      /* =========================================
+               PROJEKTSIDER
+               
+               projects/lumina.html
+               projects/north.html
+               projects/reset.html
             ========================================== */
 
       if (isProjectPage) {
-        const logoLink = navContainer.querySelector(".logo-link");
-
-        const navLinks = navContainer.querySelectorAll(".nav-links a");
-
-        /* Logo */
-
         if (logoLink) {
           logoLink.href = "../index.html";
         }
 
-        /* OM MIG */
-
-        if (navLinks[0]) {
-          navLinks[0].href = "../about.html";
+        if (logo) {
+          logo.src = "../../images/logo.svg";
         }
 
-        /* PROJEKTER */
-
-        if (navLinks[1]) {
-          navLinks[1].href = "../index.html#projects";
+        if (aboutLink) {
+          aboutLink.href = "../about.html";
         }
 
-        /* BRUG AF AI */
+        if (projectsLink) {
+          projectsLink.href = "../index.html#projects";
+        }
 
-        if (navLinks[2]) {
-          navLinks[2].href = "../ai.html";
+        if (aiLink) {
+          aiLink.href = "../ai.html";
         }
       }
 
