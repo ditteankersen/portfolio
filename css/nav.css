@@ -79,6 +79,7 @@
     justify-content: center;
 
     height: 43px;
+    width: 180px;
     padding: 0 17px;
 
     border: 2px solid var(--white);
