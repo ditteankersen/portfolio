@@ -7,11 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
        FIND CONTACT.HTML
     ====================================== */
 
-  const isProjectPage = window.location.pathname.includes("/projects/");
-
-  const contactPath = isProjectPage
-    ? "../../components/contact.html"
-    : "../components/contact.html";
+  const contactPath = "components/contact.html";
 
   /* =====================================
        LOAD CONTACT POPUP
@@ -88,7 +84,7 @@ function initContactPopup() {
 
   /* =====================================
        CONTACT BUTTONS
-       
+
        Event delegation gør, at det virker
        selvom nav/footer bliver loaded
        efter contact.js.

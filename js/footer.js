@@ -4,20 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!footerContainer) return;
 
   /* =========================================
-       FIND DEN RIGTIGE STI TIL FOOTER.HTML
-    ========================================= */
-
-  const isProjectPage = window.location.pathname.includes("/projects/");
-
-  const footerPath = isProjectPage
-    ? "../../components/footer.html"
-    : "../components/footer.html";
-
-  /* =========================================
        HENT FOOTER
     ========================================= */
 
-  fetch(footerPath)
+  fetch("components/footer.html")
     .then((response) => {
       if (!response.ok) {
         throw new Error(`Kunne ikke hente footeren: ${response.status}`);
@@ -30,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
       footerContainer.innerHTML = html;
 
       /* Fortæl resten af siden,
-               at footeren er loaded */
+         at footeren er loaded */
 
       document.dispatchEvent(new CustomEvent("footerLoaded"));
     })
