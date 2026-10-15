@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mellemrum | Case 01</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+</head>
+<body>
+  <!-- Navigation -->
+  <div id="nav-container"></div>
+  <main>
+    <!-- Case hero -->
+    <section class="case-hero" aria-labelledby="case-title">
+      <!-- Venstre kolonne: tekst -->
+      <div class="case-hero__content">
+        <p class="case-hero__label">CASE 01</p>
+        <h1 class="case-hero__title" id="case-title">
+          MELLEMRUM
+        </h1>
+        <h2 class="case-hero__subtitle">
+          En mere robust React løsning
+        </h2>
+        <p class="case-hero__description">
+          Mellemrum er en lokal kulturplatform, hvor brugere
+          kan finde, oprette og tilmelde sig events. Projektet tog
+          udgangspunkt i en eksisterende React-løsning, som
+          jeg har forbedret med fokus på en bedre brugeroplevelse,
+          accessibility og en mere vedligeholdelsesvenlig kode.
+        </p>
+       
+<div class="case-hero__actions">
+  <a
+    class="case-hero__button"
+    href="https://ditteankersen.github.io/mellemrum/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Se live løsningen
+  </a>
+
+  <a
+    class="case-hero__button case-hero__button--secondary"
+    href="https://github.com/ditteankersen/mellemrum"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Se Mellemrum-projektets kode på GitHub"
+  >
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      width="18"
+      height="18"
+      fill="currentColor"
+    >
+      <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.1c-3.1.67-3.75-1.32-3.75-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15.99 1.7 2.6 1.21 3.23.92.1-.72.39-1.21.71-1.49-2.47-.28-5.07-1.24-5.07-5.51 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.06 1.14a10.6 10.6 0 0 1 5.57 0c2.12-1.44 3.06-1.14 3.06-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3.01 0 4.28-2.61 5.22-5.1 5.5.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/>
+    </svg>
+    Se GitHub repository
+  </a>
+</div>
+
+
+
+      </div>
+      <!-- Højre kolonne: mockup -->
+      <div class="case-hero__visual">
+        <img
+          src="images/mmmockup.png"
+          alt="Mellemrum – platform til lokale kulturevents i Aarhus"
+          class="case-hero__image"
+          fetchpriority="high"
+        >
+      </div>
+    </section>
+<!-- UDFORDRINGEN -->
+<section class="case-challenge" aria-labelledby="challenge-title">
+  <div class="case-challenge__content">
+    <h2 class="case-challenge__title" id="challenge-title">
+      <span class="case-challenge__number">01.</span>
+      <span>PROBLEMET</span>
+    </h2>
+    <p class="case-challenge__description">
+      Den eksisterende løsning havde en række udfordringer,
+      som gik ud over brugeroplevelsen og tilgængeligheden.
+      UX var inkonsistent, koden var ikke vedligeholdelsesvenlig, og der manglede
+      tydelig feedback i særligt tilmeldings- og søgeflowet.
+    </p>
+  </div>
+  <div class="case-challenge__visual">
+    <img
+      src="images/mellemrum.png"
+      alt="Skærmbillede af Mellemrums eventoversigt med søgefelt og eventkort"
+      class="case-challenge__image"
+      loading="lazy"
+    >
+  </div>
+</section>
+<!-- UNDERSØGELSE OG PRIORITERING -->
+<section class="case-research" aria-labelledby="research-title">
+  <div class="case-research__intro">
+    <h2 class="case-research__title" id="research-title">
+      02. UNDERSØGELSE & PRIORITERING
+    </h2>
+    <p class="case-research__description">
+      Jeg undersøgte den eksisterende løsning for at identificere
+      de vigtigste forbedringspunkter. Jeg prioriterede de områder,
+      hvor ændringer kunne skabe størst værdi for brugerne og gøre
+      løsningen lettere at vedligeholde, fremfor at fokusere for meget på det visuelle.
+      Her er 3 udvalgte forbedringer, jeg har arbejdet med.
+    </p>
+  </div>
+  <div class="case-research__grid">
+    <article class="case-research__item">
+      <h3 class="case-research__item-title">
+        Brugersikkerhed
+      </h3>
+      <p class="case-research__item-description">
+        Jeg har prioriteret at undersøge brugersikkerheden og
+        lave løsningen mere sikker.
+      </p>
+    </article>
+    <article class="case-research__item">
+      <h3 class="case-research__item-title">
+        Robusthed
+      </h3>
+      <p class="case-research__item-description">
+        Jeg har undersøgt fejlhåndtering og loading for at gøre
+        løsningen mere robust.
+      </p>
+    </article>
+    <article class="case-research__item">
+      <h3 class="case-research__item-title">
+        Vedligeholdelse
+      </h3>
+      <p class="case-research__item-description">
+        En af mine større prioriteter var at undersøge, hvor
+        vedligeholdelsesvenlig koden var og forbedre dette.
+      </p>
+    </article>
+  </div>
+</section>
+<!-- ========================================
+     03. LØSNINGEN
+======================================== -->
+<section class="case-solution" aria-labelledby="solution-title">
+  <h2 class="case-solution__title" id="solution-title">
+    03. LØSNINGEN
+  </h2>
+  <div class="case-solution__rows">
+    <!-- BRUGERSIKKERHED -->
+    <article class="case-solution__row">
+      <div class="case-solution__visual">
+        <img
+          src="images/login.png"
+          alt="Skærmbillede af loginfunktionen til tilmeldingsoversigten"
+          class="case-solution__image"
+          loading="lazy"
+        >
+      </div>
+      <div class="case-solution__content">
+        <h3 class="case-solution__heading">
+          Brugersikkerhed
+        </h3>
+        <p class="case-solution__description">
+          Jeg har tilføjet en login-prototype til tilmeldingsoversigten,
+          så personlige oplysninger som navne og e-mailadresser ikke
+          vises direkte for uvedkommende. I en færdig løsning kræver
+          det selvfølgelig reel adgangskontrol.
+        </p>
+      </div>
+    </article>
+    <!-- ROBUSTHED -->
+    <article class="case-solution__row case-solution__row--reverse">
+      <div class="case-solution__visual">
+        <img
+          src="images/fejl.png"
+          alt="Eksempler på fejlbeskeder og loading-states i Mellemrum"
+          class="case-solution__image"
+          loading="lazy"
+        >
+      </div>
+      <div class="case-solution__content">
+        <h3 class="case-solution__heading">
+          Robusthed
+        </h3>
+        <p class="case-solution__description">
+          Jeg har implementeret fejlbeskeder og loading-states,
+          så brugeren får tydelig feedback undervejs. Hvis man
+          eksempelvis søger efter et event, der ikke findes,
+          vises en fejlbesked, som forklarer, hvad der sker.
+        </p>
+      </div>
+    </article>
+    <!-- VEDLIGEHOLDELSE -->
+    <article class="case-solution__row">
+      <div class="case-solution__visual">
+        <img
+          src="images/kode.png"
+          alt="Eksempel på projektets komponentstruktur og opdeling af CSS"
+          class="case-solution__image"
+          loading="lazy"
+        >
+      </div>
+      <div class="case-solution__content">
+        <h3 class="case-solution__heading">
+          Vedligeholdelse
+        </h3>
+        <p class="case-solution__description">
+          1 ting jeg har gjort ifbm. vedligholdelse af koden er, at opdele CSS i separate filer, så styles er lettere
+          at finde og vedligeholde. Det mindsker risikoen for utilsigtede
+          påvirkninger mellem komponenter og gør koden lettere at
+          videreudvikle og samarbejde om.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+<!-- ========================================
+     04. RESULTAT
+======================================== -->
+<section class="case-results" aria-labelledby="results-title">
+  <h2 class="case-results__title" id="results-title">
+    04. RESULTAT
+  </h2>
+  <div class="case-results__cards">
+    <article class="case-results__card">
+      <h3>Forbedret brugeroplevelse</h3>
+      <p>
+        Brugere kan finde og tilmelde sig events
+        og får tydelig feedback undervejs.
+      </p>
+    </article>
+    <article class="case-results__card">
+      <h3>Mere stabil løsning</h3>
+      <p>
+        Fejlbeskeder og loading-states gør det
+        tydeligere, hvad der sker i løsningen.
+      </p>
+    </article>
+    <article class="case-results__card">
+      <h3>Lettere at vedligeholde</h3>
+      <p>
+        En mere struktureret kodebase gør det
+        nemmere at videreudvikle projektet.
+      </p>
+    </article>
+  </div>
+  <div class="case-results__more">
+    <a
+      class="case-results__link"
+      href="documents/mellemrum.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Se alle mine forbedringer
+    </a>
+  </div>
+</section>
+<!-- ========================================
+     05. REFLEKSION OG VÆRDI
+======================================== -->
+<section class="case-reflection" aria-labelledby="reflection-title">
+  <div class="case-reflection__intro">
+    <h2 class="case-reflection__title" id="reflection-title">
+      05. REFLEKSION OG VÆRDI
+    </h2>
+    <p class="case-reflection__description">
+      Projektet har givet mig en dybere forståelse for, hvordan
+      små ændringer i både kode og UX kan gøre en stor forskel
+      for brugernes oplevelse. Det har styrket mine kompetencer
+      inden for React, Supabase og frontend-udvikling og givet mig
+      erfaring med at arbejde mere struktureret og langsigtet. Næste skridt
+      i denne case kunne være at arbejde mere med selve designet og implementere en database for administratorer og brugere, så platformen kan fungere i praksis.
+    </p>
+  </div>
+  <div class="case-reflection__points">
+    <article class="case-reflection__item">
+      <h3>Styrket teknisk forståelse</h3>
+      <p>
+        Jeg har fået mere erfaring med at arbejde med React,
+        Supabase og håndtering af data i en virkelig løsning.
+      </p>
+    </article>
+    <article class="case-reflection__item">
+      <h3>Fokus på brugeren</h3>
+      <p>
+        Arbejdet med brugeroplevelsen har givet mig indsigt i,
+        hvordan små detaljer kan have stor betydning for den
+        samlede oplevelse.
+      </p>
+    </article>
+    <article class="case-reflection__item">
+      <h3>En mere langsigtet tilgang</h3>
+      <p>
+        Jeg har lært at strukturere koden mere bæredygtigt,
+        så projektet er lettere at vedligeholde og videreudvikle.
+      </p>
+    </article>
+  </div>
+</section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript -->
+  <script src="js/nav.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/footer.js"></script>
+
+</body>
+</html>

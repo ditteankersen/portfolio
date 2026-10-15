@@ -115,3 +115,4 @@ nextButton.addEventListener("click", () => {
 
   showQuote(currentQuote);
 });
+

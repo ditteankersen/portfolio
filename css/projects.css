@@ -1,898 +1,1037 @@
-/*GENERELT */
+/* ========================================
+   GENERELT
+======================================== */
+
+:root {
+  --red: #A80A1C;
+  --brown: #633A35;
+  --white: #F7F3ED;
+  --text: #262626;
+
+  --font-heading: "Climate Crisis", sans-serif;
+  --font-body: "Poppins", sans-serif;
+  --font-nav: "Inter", sans-serif;
+
+  /* Typografisk skala */
+  --text-xs: 0.8125rem; /* 13px */
+  --text-sm: 0.9375rem; /* 15px */
+  --text-base: 1rem;    /* 16px */
+  --text-lg: 1.125rem;  /* 18px */
+
+  --heading-sm: 1.1875rem; /* 19px */
+  --heading-md: clamp(1.5rem, 2.5vw, 2rem);
+  --heading-lg: clamp(1.375rem, 2.5vw, 2rem);
+
+  --line-body: 1.7;
+  --line-heading: 1.3;
+}
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: #F7F3ED;
-    color: #171717;
-    min-height: 100vh;
+  min-height: 100vh;
+  background-color: var(--white);
+  color: #171717;
+  font-family: var(--font-nav);
+  font-size: var(--text-base);
+  line-height: var(--line-body);
 }
 
-:root {
-    --red: #A80A1C;
-    --brown: #633A35;
-    --white: #F7F3ED;
+/* Alle overskrifter bruger Poppins som udgangspunkt */
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-body);
+}
 
-    --font-heading: "Climate Crisis", sans-serif;
-    --font-body: "Poppins", sans-serif;
-    --font-nav: "Inter", sans-serif;
-} 
+/* Brødtekst bruger Inter */
+p {
+  font-family: var(--font-nav);
+  color: var(--text);
+}
 
-/* ==================================================
-   NAVIGATION
-================================================== */
+/* ========================================
+   HERO
+======================================== */
 
-.navbar {
-    width: 100%;
-    height: 55px;
+.case-hero {
+  display: grid;
+  grid-template-columns: 48% 52%;
+  align-items: stretch;
 
-    background-color: var(--red);
+  width: 100%;
+  height: min(680px, calc(100svh - 55px));
+  min-height: 520px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 
-    padding: 0 16px 0 29px;
+  background-color: var(--white);
+  border-top: 2px solid var(--red);
+  border-bottom: 1px solid var(--brown);
+}
+
+.case-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  min-width: 0;
+  padding: 40px 28px 40px 8%;
+}
+
+.case-hero__label {
+  margin-bottom: 14px;
+
+  color: var(--brown);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.case-hero__title {
+  margin: 0;
+
+  color: var(--red);
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 3.2vw, 48px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.0005em;
+
+  white-space: nowrap;
+}
+
+.case-hero__subtitle {
+  margin: 10px 0 20px;
+
+  color: var(--brown);
+  font-family: var(--font-body);
+  font-size: clamp(19px, 1.7vw, 25px);
+  font-weight: 600;
+  line-height: var(--line-heading);
+}
+
+.case-hero__description {
+  max-width: 490px;
+  margin: 0 0 34px;
+
+  color: var(--text);
+  font-family: var(--font-nav);
+  font-size: clamp(15px, 1.1vw, 17px);
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.case-hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 46px;
+  padding: 0 30px;
+
+  border: 1px solid var(--brown);
+  border-radius: 999px;
+
+  color: var(--brown);
+  background-color: transparent;
+
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.case-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.case-hero__button--secondary {
+  gap: 10px;
+  padding: 0 24px;
+}
+
+.case-hero__button--secondary:hover {
+  color: var(--white);
+  background-color: var(--brown);
 }
 
 
-/* Logo */
-
-.logo-link {
-    display: flex;
-    align-items: center;
-
-    text-decoration: none;
+.case-hero__button:hover {
+  color: var(--white);
+  background-color: var(--brown);
 }
 
-.logo {
-    display: block;
-    width: 63px;
-    height: auto;
+.case-hero__button:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+
+.case-hero__visual {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+.case-hero__image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ========================================
+   CASE 01 – UDFORDRINGEN
+======================================== */
+
+.case-challenge {
+  display: grid;
+  grid-template-columns: 52% 48%;
+  align-items: center;
+
+  width: 100%;
+  min-height: 275px;
+  padding: 50px 4.5%;
+
+  background-color: var(--white);
+  border-bottom: 1px solid var(--brown);
+}
+
+.case-challenge__content {
+  align-self: center;
+  min-width: 0;
+  padding-right: 30px;
+}
+
+.case-challenge__title {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+
+  margin: 0 0 20px;
+
+  color: var(--red);
+  font-family: var(--font-body);
+  font-size: clamp(22px, 2.5vw, 32px);
+  font-weight: 600;
+  line-height: var(--line-heading);
+}
+
+.case-challenge__number {
+  flex-shrink: 0;
+}
+
+.case-challenge__description {
+  max-width: 390px;
+  margin: 0;
+
+  color: var(--text);
+  font-family: var(--font-nav);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  line-height: var(--line-body);
+}
+
+.case-challenge__visual {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+
+  min-width: 0;
+  width: 100%;
+}
+
+.case-challenge__image {
+  display: block;
+
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+
+  object-fit: contain;
+  object-position: center right;
+}
+
+.case-challenge__caption {
+  width: 100%;
+  max-width: 600px;
+  margin: 8px 0 0;
+
+  color: var(--brown);
+  font-family: var(--font-nav);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+.case-challenge__button {
+  margin-top: 24px;
+  align-self: flex-start;
 }
 
 
-/* Navigation links */
+/* ========================================
+   CASE 02 – UNDERSØGELSE OG PRIORITERING
+======================================== */
 
-.nav-links {
-    height: 100%;
+.case-research {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  align-items: start;
+  column-gap: 8%;
 
-    display: flex;
-    align-items: center;
-    gap: 29px;
+  width: 100%;
+  padding: 48px 5% 46px;
+
+  background-color: var(--white);
+  border-bottom: 1px solid var(--brown);
 }
 
-.nav-links a {
-    font-family: inter, sans-serif;  
+.case-research__intro {
+  min-width: 0;
+}
+
+.case-research__title {
+  margin: 0 0 24px;
+
+  color: var(--red);
+  font-family: var(--font-body);
+  font-size: var(--heading-md);
+  font-weight: 600;
+  line-height: var(--line-heading);
+}
+
+.case-research__description {
+  max-width: 600px;
+  margin: 0;
+
+  color: var(--text);
+  font-family: var(--font-nav);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  line-height: var(--line-body);
+}
+
+.case-research__grid {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  margin-top: 0;
+}
+
+.case-research__item {
+  min-width: 0;
+  padding: 0 0 24px;
+}
+
+.case-research__item + .case-research__item {
+  padding: 24px 0;
+  border-top: 1px solid rgba(99, 58, 53, 0.25);
+}
+
+.case-research__item-title {
+  margin: 0 0 10px;
+
+  color: var(--brown);
+  font-family: var(--font-body);
+  font-size: var(--heading-sm);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.case-research__item-description {
+  max-width: 420px;
+  margin: 0;
+
+  color: var(--text);
+  font-family: var(--font-nav);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: var(--line-body);
+}
+
+/* ========================================
+   CASE 03 – LØSNINGEN
+======================================== */
+
+.case-solution {
+  width: 100%;
+  padding: 36px 4% 40px;
+
+  background-color: var(--white);
+  border-bottom: 1px solid var(--brown);
+}
+
+.case-solution__title {
+  margin: 0 0 24px;
+
+  color: var(--red);
+  font-family: var(--font-body);
+  font-size: var(--heading-md);
+  font-weight: 600;
+  line-height: var(--line-heading);
+}
+
+.case-solution__rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-solution__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: clamp(32px, 5vw, 80px);
+
+  min-width: 0;
+  padding: 50px 0;
+}
+
+.case-solution__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  width: 100%;
+}
+
+.case-solution__image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+  max-height: 330px;
+
+  object-fit: contain;
+  object-position: center;
+
+  background-color: var(--white);
+  border: 1px solid rgba(99, 58, 53, 0.1);
+  border-radius: 5px;
+
+  box-shadow:
+    0 8px 24px rgba(48, 35, 28, 0.1),
+    0 2px 5px rgba(48, 35, 28, 0.06);
+}
+
+.case-solution__content {
+  min-width: 0;
+  max-width: 520px;
+}
+
+.case-solution__heading {
+  margin: 0 0 14px;
+
+  color: var(--brown);
+  font-family: var(--font-body);
+  font-size: clamp(20px, 1.8vw, 25px);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.case-solution__description {
+  margin: 0;
+
+  color: var(--text);
+  font-family: var(--font-nav);
+  font-size: clamp(15px, 1.15vw, 18px);
+  font-weight: 400;
+  line-height: var(--line-body);
+}
+
+.case-solution__row--reverse {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+}
+
+.case-solution__row--reverse .case-solution__visual {
+  order: 1;
+}
+
+.case-solution__row--reverse .case-solution__content {
+  order: 2;
+}
+
+.case-solution__row:last-child .case-solution__image {
+  width: auto;
+  max-width: 100%;
+  max-height: 300px;
+}
+
+/* ========================================
+   CASE 04 – RESULTAT OG VERIFIKATION
+======================================== */
+
+.case-results {
+  width: 100%;
+  padding: 42px 5% 38px;
+
+  background-color: var(--white);
+  border-bottom: 1px solid var(--brown);
+}
+
+.case-results__title {
+  margin: 0 0 30px;
+
+  color: var(--red);
+  font-family: var(--font-body);
+  font-size: var(--heading-md);
+  font-weight: 600;
+  line-height: var(--line-heading);
+}
+
+.case-results__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.case-results__card {
+  min-width: 0;
+  padding: 24px;
+
+  background-color: rgba(99, 58, 53, 0.025);
+  border: 1px solid rgba(99, 58, 53, 0.12);
+  border-radius: 7px;
+}
+
+.case-results__card h3 {
+  margin: 0 0 12px;
+
+  color: var(--brown);
+  font-family: var(--font-body);
+  font-size: clamp(17px, 1.35vw, 21px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.case-results__card p {
+  margin: 0;
+
+  color: var(--text);
+  font-family: var(--font-nav);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: var(--line-body);
+}
+
+.case-results__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.case-results__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  min-height: 44px;
+  padding: 0 24px;
+
+  border: 1px solid var(--brown);
+  border-radius: 999px;
+
+  color: var(--brown);
+  background-color: transparent;
+
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.case-results__link:hover {
+  color: var(--white);
+  background-color: var(--brown);
+}
+
+.case-results__link:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+
+/* ========================================
+   CASE 05 – REFLEKSION OG VÆRDI
+======================================== */
+
+.case-reflection {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(36px, 5vw, 76px);
+
+  width: 100%;
+  padding: 48px 5% 46px;
+
+  background-color: var(--white);
+}
+
+.case-reflection__intro {
+  min-width: 0;
+}
+
+.case-reflection__title {
+  margin: 0 0 24px;
+
+  color: var(--red);
+  font-family: var(--font-body);
+  font-size: var(--heading-md);
+  font-weight: 600;
+  line-height: var(--line-heading);
+}
+
+.case-reflection__description {
+  max-width: 600px;
+  margin: 0;
+
+  color: var(--text);
+  font-family: var(--font-nav);
+  font-size: clamp(15px, 1.2vw, 18px);
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+.case-reflection__points {
+  min-width: 0;
+  padding-left: clamp(24px, 4vw, 48px);
+
+  border-left: 1px solid rgba(99, 58, 53, 0.25);
+}
+
+.case-reflection__item {
+  padding: 0 0 22px;
+}
+
+.case-reflection__item + .case-reflection__item {
+  padding: 22px 0;
+  border-top: 1px solid rgba(99, 58, 53, 0.25);
+}
+
+.case-reflection__item:last-child {
+  padding-bottom: 0;
+}
+
+.case-reflection__item h3 {
+  margin: 0 0 9px;
+
+  color: var(--brown);
+  font-family: var(--font-body);
+  font-size: clamp(17px, 1.35vw, 21px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.case-reflection__item p {
+  margin: 0;
+
+  color: var(--text);
+  font-family: var(--font-nav);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: var(--line-body);
+}
+
+/* ========================================
+   RESPONSIVT DESIGN – TABLET
+======================================== */
+
+@media (min-width: 701px) and (max-width: 1000px) {
+  .case-hero {
+    grid-template-columns: 48% 52%;
+    height: min(650px, calc(100svh - 55px));
+    min-height: 480px;
+  }
+
+  .case-hero__content {
+    padding: 30px 18px 30px 6%;
+  }
+
+  .case-hero__title {
+    font-size: clamp(28px, 3.8vw, 38px);
+  }
+
+  .case-hero__subtitle {
+    font-size: 18px;
+  }
+
+  .case-hero__description {
     font-size: 14px;
-    font-weight: 600;
-
-    color: var(--white);
-    text-decoration: none;
-
-    white-space: nowrap;
-
-    transition:
-        color 0.25s ease,
-        background-color 0.25s ease,
-        border-color 0.25s ease;
+    line-height: 1.6;
+  }
 }
 
-.nav-links a:not(.contact-button) {
-    display: inline-block;
-    transition:
-        color 0.25s ease,
-        transform 0.3s ease;
-}
+@media (min-width: 701px) and (max-width: 950px) {
+  .case-research {
+    grid-template-columns: 1fr 0.9fr;
+    column-gap: 5%;
+    padding: 36px 4%;
+  }
 
-.nav-links a:not(.contact-button):hover {
-    transform: translateX(5px);
-}
-
-
-/* Contact button */
-
-.contact-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    height: 43px;
-    padding: 0 17px;
-
-    border: 2px solid var(--white);
-    border-radius: 999px;
-
-    color: var(--white);
-}
-
-
-/* Contact button hover */
-
-.contact-button:hover {
-    background-color: var(--white);
-    color: var(--red);
-}
-
-/* ==================================================
-   LUMINA PROJECT
-================================================== */
-
-.project-page {
-    width: 100%;
-    background-color: var(--white);
-}
-
-
-/* ==================================================
-    HERO
-================================================== */
-
-.project-hero {
-    width: 100%;
-
-    padding: 42px 22px 36px;
-
-    border-bottom: 1px solid var(--brown);
-}
-
-
-/* ==================================================
-    LABEL
-================================================== */
-
-.project-label {
-    margin: 0 0 20px;
-
-    font-family: "Poppins", sans-serif;
-    font-size: 20px;
-    line-height: 1.1;
-    font-weight: 600;
-
-    color: var(--brown);
-}
-
-
-/* ==================================================
-    TITLE
-================================================== */
-
-.project-main-title {
-    margin: 0;
-
-    font-family: "Climate Crisis", sans-serif;
-    font-size: 62px;
-    line-height: 0.82;
-    font-weight: 400;
-    color: var(--red);
-    transform: scaleY(1.16) scaleX(1.18);
-    transform-origin: left center;
-}
-
-
-/* ==================================================
-   PROTOTYPE SECTION
-================================================== */
-
-.prototype-section {
-    width: 100%;
-
-    padding: 32px 22px 32px;
-
-    border-bottom: 1px solid var(--brown);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-/* ==================================================
-   PROTOTYPE TITLE
-================================================== */
-
-.prototype-title {
-    margin: 0 0 28px;
-
-    font-family: "Poppins", sans-serif;
+  .case-research__title,
+  .case-solution__title,
+  .case-results__title,
+  .case-reflection__title {
     font-size: 25px;
-    line-height: 1.2;
-    font-weight: 700;
+  }
 
-    color: var(--brown);
+  .case-research__description {
+    font-size: 15px;
+  }
 
-    text-align: center;
+  .case-research__item-title {
+    font-size: 17px;
+  }
+
+  .case-research__item-description {
+    font-size: 13px;
+  }
+
+  .case-solution {
+    padding: 28px 4%;
+  }
+
+  .case-solution__row,
+  .case-solution__row--reverse {
+    gap: 28px;
+    padding: 28px 0;
+  }
+
+  .case-solution__image {
+    max-height: 260px;
+  }
+
+  .case-solution__row:last-child .case-solution__image {
+    max-height: 240px;
+  }
+
+  .case-solution__heading {
+    font-size: 19px;
+  }
+
+  .case-solution__description {
+    font-size: 14px;
+  }
+
+  .case-results {
+    padding: 34px 4%;
+  }
+
+  .case-results__cards {
+    gap: 14px;
+  }
+
+  .case-results__card {
+    padding: 18px;
+  }
+
+  .case-results__card h3 {
+    font-size: 17px;
+  }
+
+  .case-results__card p {
+    font-size: 14px;
+  }
+
+  .case-reflection {
+    gap: 28px;
+    padding: 36px 4%;
+  }
+
+  .case-reflection__description {
+    font-size: 14px;
+  }
+
+  .case-reflection__points {
+    padding-left: 24px;
+  }
+
+  .case-reflection__item h3 {
+    font-size: 17px;
+  }
+
+  .case-reflection__item p {
+    font-size: 13px;
+  }
 }
 
+/* ========================================
+   RESPONSIVT DESIGN – MOBIL
+======================================== */
 
-/* ==================================================
-   FIGMA PROTOTYPE
-================================================== */
-
-.figma-wrapper {
-    width: min(800px, 100%);
-
-    aspect-ratio: 800 / 450;
-
-    border: 2px solid var(--brown);
-
-    overflow: hidden;
-
-    background-color: var(--white);
-}
-
-
-.figma-wrapper iframe {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    border: none;
-}
-
-/* ==================================================
-   LUMINA CASE STUDY
-================================================== */
-
-.lumina-case-section {
-    width: 100%;
-    background-color: var(--white);
-}
-
-
-/* ==================================================
-   CASE BLOCK – GENEREL
-================================================== */
-
-.lumina-case-block {
-    width: 100%;
-
-    border-top: 1px solid var(--brown);
-    border-bottom: 1px solid var(--brown);
-
-    padding: 38px 4.5vw;
-
+@media (max-width: 700px) {
+  .case-hero {
     display: grid;
-    align-items: center;
+    grid-template-columns: 1fr;
 
-    column-gap: 6vw;
-}
-
-
-/* ==================================================
-   CASE TEXT
-================================================== */
-
-.lumina-case-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.lumina-case-text h2 {
-    margin: 0 0 10px;
-
-    font-family: "Poppins", sans-serif;
-    font-size: clamp(32px, 3vw, 48px);
-    line-height: 1.15;
-    font-weight: 700;
-
-    color: var(--brown);
-}
-
-.case-number {
-    margin-right: 10px;
-}
-
-.lumina-case-text p {
-    margin: 20px 0 0;
-    max-width: 400px;
-
-    font-family: "Inter", sans-serif;
-    font-size: clamp(20px, 1.65vw, 28px);
-    line-height: 1.28;
-    font-weight: 400;
-
-    color: #262626;
-}
-
-
-/* ==================================================
-   01. LANDINGPAGE
-================================================== */
-
-.landingpage-block {
-    grid-template-columns: 0.95fr 1.05fr;
-
-    min-height: 535px;
-}
-
-
-/* Text */
-
-.landingpage-block .lumina-case-text {
-    padding-left: 2vw;
-}
-
-
-.landingpage-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-
-    width: 100%;
-    max-width: 500px;
-
-    margin: 0 auto;
-}
-
-.landingpage-images img {
-    display: block;
-
-    width: 100%;
-    max-width: 235px;
     height: auto;
+    min-height: calc(100svh - 55px);
+  }
 
-    object-fit: contain;
-}
+  .case-hero__content {
+    padding: 38px 6%;
+  }
 
+  .case-hero__title {
+    font-size: clamp(30px, 8vw, 46px);
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
 
-/* ==================================================
-   02. FORBEDRINGER
-================================================== */
+  .case-hero__subtitle {
+    font-size: 18px;
+  }
 
-.improvements-block {
-    grid-template-columns: 1.05fr 0.95fr;
+  .case-hero__description {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 26px;
+  }
 
-    min-height: 535px;
-}
+  .case-hero__visual {
+    display: none;
+  }
 
+  .case-challenge {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    min-height: auto;
+    padding: 30px 6%;
+  }
 
-.lumina-case-image-single {
-    width: 100%;
+  .case-challenge__content {
+    padding-right: 0;
+  }
 
-    display: flex;
-    align-items: center;
+  .case-challenge__title {
+    gap: 12px;
+    margin-bottom: 16px;
+    font-size: clamp(21px, 6vw, 28px);
+  }
+
+  .case-challenge__description {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .case-challenge__visual {
     justify-content: center;
-}
+  }
 
-.lumina-case-image-single img {
-    display: block;
-
+  .case-challenge__image {
     width: 100%;
     max-width: 480px;
-    height: auto;
-
-    object-fit: contain;
-}
-
-
-/* Text */
-
-.improvements-block .lumina-case-text {
-    padding-right: 2vw;
-}
-
-.improvements-block .lumina-case-text p {
-    max-width: 500px;
-}
-
-/* ==================================================
-   03. ÆSTETIK OG STIL
-================================================== */
-
-.aesthetic-block {
-    grid-template-columns: 0.9fr 1.1fr;
-
-    min-height: 500px;
-
-    border-top: 1px solid var(--brown);
-    border-bottom: 1px solid var(--brown);
-}
-
-
-/* ==================================================
-   TEXT
-================================================== */
-
-.aesthetic-block .lumina-case-text {
-    padding-left: 2vw;
-}
-
-.aesthetic-block .lumina-case-text p {
-    max-width: 420px;
-}
-
-
-/* ==================================================
-   BEFORE / AFTER
-================================================== */
-
-.aesthetic-images {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    gap: 14px;
-
-    width: 100%;
-}
-
-
-/* Images */
-
-.aesthetic-images .before-image,
-.aesthetic-images .after-image {
-    display: block;
-
-    width: 100%;
-    max-width: 390px;
-    height: auto;
-
-    object-fit: contain;
-}
-
-
-/* ==================================================
-   ARROW
-================================================== */
-
-.aesthetic-images .comparison-arrow {
-    display: block;
-
-    width: 24px;
-    height: auto;
-
-    object-fit: contain;
-}
-
-/* ==================================================
-   NORTH PROJECT
-================================================== */
-
-.north-page {
-    width: 100%;
-}
-
-
-/* ==================================================
-   CASE SECTIONS
-================================================== */
-
-.north-section {
-    width: 100%;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-
-    border-bottom: 1px solid var(--brown);
-
-    padding: 36px 5%;
-}
-
-
-/* ==================================================
-   NORTH TEXT
-================================================== */
-
-.north-text {
-    max-width: 470px;
-}
-
-.north-text h2 {
-    margin: 0 0 24px;
-
-    font-family: "Poppins", sans-serif;
-    font-size: 28px;
-    line-height: 1.15;
-    font-weight: 700;
-
-    color: var(--brown);
-}
-
-.north-text p {
-    margin: 0;
-
-    font-family: "Inter", sans-serif;
-    font-size: 20px;
-    line-height: 1.18;
-    font-weight: 400;
-
-    color: #262626;
-}
-
-
-/* ==================================================
-   TWO IMAGES
-================================================== */
-
-.north-images-two {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 14px;
-}
-
-.north-images-two figure {
-    margin: 0;
-    width: 43%;
-}
-
-.north-images-two img {
-    display: block;
-
-    width: 100%;
-    height: auto;
-}
-
-.north-images-two figcaption {
-    margin-top: 7px;
-
-    font-family: "Inter", sans-serif;
-    font-size: 11px;
-    line-height: 1.2;
-
-    color: #262626;
-}
-
-
-/* ==================================================
-   SINGLE IMAGE / VPC
-================================================== */
-
-.north-image-single {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.north-image-single img {
-    display: block;
-
-    width: 78%;
-    max-width: 390px;
-    height: auto;
-}
-
-
-/* ==================================================
-   SECTION 01
-================================================== */
-
-.north-section-one {
-    min-height: 330px;
-}
-
-.north-section-one .north-text {
-    justify-self: start;
-}
-
-.north-section-one .north-images {
-    justify-self: center;
-}
-
-
-/* ==================================================
-   SECTION 02
-================================================== */
-
-.north-section-two {
-    min-height: 330px;
-}
-
-.north-section-two .north-image-single {
-    justify-self: center;
-}
-
-.north-section-two .north-text {
-    justify-self: end;
-}
-
-
-/* ==================================================
-   SECTION 03
-================================================== */
-
-.north-section-three {
-    min-height: 330px;
-}
-
-.north-section-three .north-text {
-    justify-self: start;
-}
-
-.north-section-three .north-images {
-    justify-self: center;
-}
-
-
-/* ==================================================
-   RESPONSIVE
-================================================== */
-
-@media (max-width: 800px) {
-
-    .north-section {
-        grid-template-columns: 1fr;
-        gap: 35px;
-
-        padding: 40px 7%;
-    }
-
-    .north-text {
-        max-width: 100%;
-    }
-
-    .north-text h2 {
-        font-size: 25px;
-        margin-bottom: 18px;
-    }
-
-    .north-text p {
-        font-size: 17px;
-        line-height: 1.2;
-    }
-
-    .north-images-two {
-        width: 100%;
-        gap: 12px;
-    }
-
-    .north-images-two figure {
-        width: 42%;
-    }
-
-    .north-image-single img {
-        width: 70%;
-    }
-
-    .north-section-two .north-text {
-        justify-self: start;
-    }
-
-    .north-section-two .north-image-single {
-        order: 1;
-    }
-
-    .north-section-two .north-text {
-        order: 2;
-    }
-}
-
-/* ==================================================
-   RESET APP
-================================================== */
-
-.reset-page {
-    width: 100%;
-}
-
-
-/* ==================================================
-   RESET – FIGMA PROTOTYPE
-================================================== */
-
-.reset-prototype-section {
-    padding: 18px 20px 22px;
-}
-
-.reset-figma-wrapper {
-    position: relative;
-
-    width: 210px;
-    height: 562px;
-
-    border: 2px solid var(--brown);
-
-    overflow: hidden;
-
-    background-color: var(--white);
-}
-
-.reset-figma-wrapper iframe {
-    position: absolute;
-
-    width: 1000px;
-    height: 562px;
-
-    max-width: none;
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-}
-
-
-/* ==================================================
-   RESET CASE SECTIONS
-================================================== */
-
-.reset-case {
-    width: 100%;
-
-    border-bottom: 1px solid var(--brown);
-
-    padding: 42px 40px 46px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    background-color: var(--white);
-}
-
-
-/* ==================================================
-   BILLEDER
-================================================== */
-
-.reset-case .case-images {
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-
-    margin-bottom: 32px;
-}
-
-
-/* Alle billeder */
-
-.reset-case .case-images img {
-    display: block;
-
-    height: auto;
-    object-fit: contain;
-}
-
-
-/* ==================================================
-   01 – TO BILLEDER
-================================================== */
-
-.reset-images-01 {
-    gap: 32px;
-}
-
-
-.reset-images-01 img {
-    width: 230px;
-    max-width: 42%;
-}
-
-
-/* ==================================================
-   02 – ÉT BILLEDE
-================================================== */
-
-.reset-images-02 img {
-    width: 230px;
+  }
+
+  .case-research {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+    padding: 32px 6% 34px;
+  }
+
+  .case-research__title,
+  .case-solution__title,
+  .case-results__title,
+  .case-reflection__title {
+    margin-bottom: 16px;
+    font-size: clamp(22px, 6vw, 29px);
+    line-height: 1.35;
+  }
+
+  .case-research__description {
+    font-size: 14px;
+  }
+
+  .case-research__grid {
+    margin-top: 0;
+  }
+
+  .case-research__item,
+  .case-research__item + .case-research__item {
+    padding: 18px 0;
+  }
+
+  .case-research__item:first-child {
+    padding-top: 0;
+  }
+
+  .case-research__item + .case-research__item {
+    border-top: 1px solid rgba(99, 58, 53, 0.25);
+  }
+
+  .case-research__item-title {
+    margin-bottom: 7px;
+    font-size: 17px;
+  }
+
+  .case-research__item-description {
     max-width: 100%;
-}
+    font-size: 14px;
+  }
 
+  .case-solution {
+    padding: 28px 6% 30px;
+  }
 
-/* ==================================================
-   03 – TO BILLEDER
-================================================== */
+  .case-solution__row,
+  .case-solution__row--reverse {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    padding: 26px 0;
+  }
 
-.reset-images-03 {
-    gap: 32px;
-}
+  .case-solution__row--reverse .case-solution__visual,
+  .case-solution__row--reverse .case-solution__content {
+    order: initial;
+  }
 
-
-.reset-images-03 img {
-    width: 230px;
-    max-width: 42%;
-}
-
-
-/* ==================================================
-   TEKST
-================================================== */
-
-.reset-case .case-text {
+  .case-solution__image {
     width: 100%;
-    max-width: 720px;
+    max-width: 100%;
+    max-height: none;
+  }
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .case-solution__row:last-child .case-solution__image {
+    width: auto;
+    max-width: 100%;
+    max-height: 280px;
+  }
 
-    text-align: center;
-}
+  .case-solution__content {
+    max-width: 100%;
+  }
 
+  .case-solution__heading {
+    margin-bottom: 9px;
+    font-size: 19px;
+  }
 
-.reset-case .case-text h2 {
-    margin: 0 0 14px;
+  .case-solution__description {
+    font-size: 14px;
+  }
 
-    font-family: "Poppins", sans-serif;
-    font-size: 28px;
-    line-height: 1.15;
-    font-weight: 700;
+  .case-results {
+    padding: 30px 6%;
+  }
 
-    color: var(--brown);
-}
+  .case-results__cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 
+  .case-results__card {
+    padding: 20px;
+  }
 
-.reset-case .case-text p {
-    width: 100%;
-    max-width: 460px;
-
-    font-family: "Inter", sans-serif;
+  .case-results__card h3 {
+    margin-bottom: 8px;
     font-size: 18px;
-    line-height: 1.12;
-    font-weight: 400;
+  }
 
-    color: #262626;
+  .case-results__card p {
+    font-size: 14px;
+  }
 
-    text-align: center;
+  .case-results__more {
+    margin-top: 26px;
+  }
+
+  .case-results__link {
+    width: 100%;
+    padding: 0 16px;
+    font-size: 13px;
+  }
+
+  .case-reflection {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+    padding: 32px 6% 34px;
+  }
+
+  .case-reflection__description {
+    font-size: 14px;
+  }
+
+  .case-reflection__points {
+    padding-left: 18px;
+  }
+
+  .case-reflection__item {
+    padding-bottom: 18px;
+  }
+
+  .case-reflection__item + .case-reflection__item {
+    padding: 18px 0;
+  }
+
+  .case-reflection__item h3 {
+    font-size: 18px;
+  }
+
+  .case-reflection__item p {
+    font-size: 14px;
+  }
+}
+
+/* ========================================
+   REDUCERET BEVÆGELSE
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .case-hero__button,
+  .case-results__link {
+    transition: none;
+  }
 }
 
 
-/* ==================================================
-   TABLET / STØRRE SKÆRME
-================================================== */
-
-@media (min-width: 700px) {
-
-    .reset-case {
-        padding: 35px 40px;
-    }
-
-    .reset-case .case-text h2 {
-        font-size: 26px;
-    }
-
-    .reset-case .case-text p {
-        font-size: 18px;
-        line-height: 1.12;
-    }
-
-    .reset-images-01 img,
-    .reset-images-03 img {
-        max-width: 145px;
-    }
-
-    .reset-images-02 img {
-        max-width: 175px;
-    }
-
-}
-
-
-/* ==================================================
-   MOBIL
-================================================== */
-
-@media (max-width: 500px) {
-
-    .reset-case {
-        padding: 24px 20px;
-    }
-
-    .reset-case .case-text h2 {
-        font-size: 20px;
-    }
-
-    .reset-case .case-text p {
-        font-size: 15px;
-        line-height: 1.08;
-    }
-
-}
 
