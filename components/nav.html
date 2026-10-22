@@ -1,50 +1,47 @@
+
 <!-- =========================
      NAVIGATION
 ========================== -->
 
-<nav class="navbar">
+<nav class="navbar" aria-label="Hovednavigation">
 
     <a href="#" class="logo-link" aria-label="Ditte forside">
-
         <img
             src="images/logo.svg"
             alt="Ditte"
             class="logo"
         >
-
     </a>
 
+    <!-- Burger-knap: vises på mindre skærme -->
+    <button
+        class="burger-menu"
+        type="button"
+        aria-label="Åbn menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-    <div class="nav-links">
+    <!-- Navigationens links -->
+    <div class="nav-links" id="nav-links">
 
-        <a
-            href="#"
-            class="nav-about"
-        >
+        <a href="#" class="nav-about">
             OM MIG
         </a>
 
-
-        <a
-            href="#"
-            class="nav-projects"
-        >
+        <a href="#projects" class="nav-projects">
             PROJEKTER
         </a>
 
-
-        <a
-            href="#"
-            class="nav-ai"
-        >
+        <a href="ai.html" class="nav-ai">
             BRUG AF AI
         </a>
 
-
-        <a
-            href="#contact"
-            class="contact-button"
-        >
+        <a href="#contact" class="contact-button">
             KONTAKT MIG
         </a>
 

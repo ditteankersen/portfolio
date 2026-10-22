@@ -302,15 +302,15 @@ body.loaded .hero-name {
 ================================================== */
 
 .about-text {
-    width: 720px;
+    width: 700px;
     max-width: calc(100% - 40px);
 
     margin: 52px 0 0;
 
     font-family: "Inter", sans-serif;
-    font-size: 28px;
+    font-size: 23px;
     line-height: 1.2;
-    font-weight: 400;
+    font-weight: 300;
 
     color: #262626;
 }
@@ -746,4 +746,291 @@ body.loaded .hero-name {
     }
 
 } 
+
+
+/* ==================================================
+   RESPONSIVE HERO — TABLET OG MOBIL
+================================================== */
+
+@media (max-width: 768px) {
+
+    /* Hero bliver til én lodret kolonne */
+
+    .hero {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+
+        overflow: hidden;
+    }
+
+    /* Portræt øverst */
+
+    .hero-image {
+        width: 100%;
+        height: clamp(300px, 58svh, 440px);
+        min-height: 0;
+
+        overflow: hidden;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+        object-position: center 35%;
+    }
+
+    /* Tekstfelt under portrættet */
+
+    .hero-content {
+        position: relative;
+
+        width: 100%;
+        height: 245px;
+        min-height: 0;
+
+        padding: 25px 20px 30px;
+
+        overflow: hidden;
+    }
+
+    /* Overskriften */
+
+    .hero-heading {
+        position: relative;
+
+        max-width: 100%;
+        margin: 0;
+
+        font-size: clamp(20px, 5.2vw, 27px);
+        line-height: 1.2;
+        font-weight: 600;
+
+        color: var(--brown);
+    }
+
+    /* DITTE nederst i tekstfeltet */
+
+    .hero-name {
+        position: absolute;
+
+        left: 18px;
+        right: 12px;
+        bottom: 27px;
+
+        width: auto;
+    }
+
+    .hero-name span {
+        display: block;
+
+        width: 100%;
+
+        font-size: clamp(62px, 18vw, 125px);
+        line-height: 0.85;
+
+        letter-spacing: 0.005em;
+        white-space: nowrap;
+
+        transform: scaleY(1.4);
+        transform-origin: bottom left;
+    }
+
+}
+
+
+/* ==================================================
+   EKSTRA SMÅ MOBILER
+================================================== */
+
+@media (max-width: 380px) {
+
+    .hero-image {
+        height: 340px;
+    }
+
+    .hero-content {
+        height: 220px;
+        padding: 22px 16px;
+    }
+
+    .hero-heading {
+        font-size: 20px;
+    }
+
+    .hero-name {
+        left: 14px;
+        right: 8px;
+        bottom: 25px;
+    }
+
+    .hero-name span {
+        font-size: clamp(58px, 17.5vw, 66px);
+    }
+
+}
+
+
+/* ==================================================
+   RESPONSIVE PROJECTS — TABLET OG MOBIL
+   Billede først, tekst bagefter
+================================================== */
+
+@media (max-width: 768px) {
+
+    /* Ét projekt ad gangen */
+    .projects {
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+    }
+
+    /* Gør projektets indhold til selvstændige grid-elementer */
+    .project-card {
+        display: contents;
+    }
+
+    /* Billederne skal fylde hele bredden */
+    .project-image {
+        width: 100%;
+        aspect-ratio: 1.1 / 1;
+        overflow: hidden;
+    }
+
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Projekt 1: billede først, tekst bagefter */
+    .project-card:nth-child(1) .project-image {
+        order: 1;
+        grid-column: 1;
+    }
+
+    .project-card:nth-child(1) .project-info {
+        order: 2;
+        grid-column: 1;
+    }
+
+    /* Projekt 2 */
+    .project-card:nth-child(2) .project-image {
+        order: 3;
+        grid-column: 1;
+    }
+
+    .project-card:nth-child(2) .project-info {
+        order: 4;
+        grid-column: 1;
+    }
+
+    /* Projekt 3 */
+    .project-card:nth-child(3) .project-image {
+        order: 5;
+        grid-column: 1;
+    }
+
+    .project-card:nth-child(3) .project-info {
+        order: 6;
+        grid-column: 1;
+    }
+
+    /* Tekstfeltet */
+    .project-info {
+        width: 100%;
+        aspect-ratio: auto;
+        min-width: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 30px 24px 34px;
+    }
+
+    /* Projektnummer og overskrift */
+    .project-title {
+        width: 100%;
+        margin: 0;
+
+        display: flex;
+        align-items: baseline;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+
+        gap: 8px;
+
+        font-size: clamp(25px, 6.5vw, 38px);
+        line-height: 1.2;
+        white-space: normal;
+        text-align: left;
+
+        transform: none;
+    }
+
+    /* Beskrivelsen */
+    .project-description {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 22px 0 0;
+
+        font-size: clamp(18px, 4.8vw, 23px);
+        line-height: 1.4;
+
+        text-align: left;
+    }
+
+    /* Læs mere-knappen */
+    .project-button {
+        width: 165px;
+        min-height: 48px;
+        height: auto;
+
+        margin: 26px 0 0;
+        padding: 10px 16px;
+
+        align-self: flex-start;
+        transform: none;
+
+        font-size: 16px;
+    }
+}
+
+
+/* ==================================================
+   EKSTRA SMÅ MOBILER
+================================================== */
+
+@media (max-width: 380px) {
+
+    .project-info {
+        padding: 26px 18px 30px;
+    }
+
+    .project-title {
+        font-size: 25px;
+        gap: 6px;
+    }
+
+    .project-description {
+        font-size: 18px;
+        line-height: 1.4;
+        margin-top: 18px;
+    }
+
+    .project-button {
+        margin-top: 22px;
+    }
+}
+
 

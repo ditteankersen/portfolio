@@ -92,3 +92,179 @@
     background-color: var(--white);
     color: var(--red);
 } 
+
+
+/* ==================================================
+   BURGER MENU
+================================================== */
+
+/* Burger-knappen er skjult på desktop */
+
+.burger-menu {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 9px;
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    z-index: 1001;
+}
+
+/* De tre streger */
+
+.burger-menu span {
+    display: block;
+
+    width: 25px;
+    height: 2px;
+
+    background-color: var(--white);
+    border-radius: 2px;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+/* Burger bliver til et X, når menuen er åben */
+
+.burger-menu.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* ==================================================
+   TABLET OG MOBIL
+================================================== */
+
+@media (max-width: 768px) {
+
+    /* Navigationens topbjælke */
+
+    .navbar {
+        position: relative;
+        z-index: 1000;
+
+        height: 65px;
+        padding: 0 20px;
+    }
+
+    /* Logo */
+
+    .logo {
+        width: 58px;
+    }
+
+    /* Vis burger-knappen */
+
+    .burger-menu {
+        display: flex;
+    }
+
+    /* Selve dropdown-menuen */
+
+    .nav-links {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        padding: 12px 20px 24px;
+
+        background-color: var(--red);
+
+        border-top: 1px solid rgba(247, 243, 237, 0.3);
+
+        /* Skjult som standard */
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+    /* Menuen åbnes */
+
+    .nav-links.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+
+        transform: translateY(0);
+    }
+
+    /* De enkelte links */
+
+    .nav-links a:not(.contact-button) {
+        display: block;
+
+        padding: 17px 0;
+
+        border-bottom: 1px solid rgba(247, 243, 237, 0.25);
+
+        font-size: 14px;
+    }
+
+    /* Undgå desktop-hoverbevægelsen på mobil */
+
+    .nav-links a:not(.contact-button):hover {
+        transform: none;
+    }
+
+    /* Kontaktknappen */
+
+    .contact-button {
+        align-self: flex-start;
+
+        width: 180px;
+        max-width: 100%;
+        height: 43px;
+
+        margin-top: 20px;
+    }
+}
+
+
+/* ==================================================
+   TILGÆNGELIGHED
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .burger-menu span,
+    .nav-links {
+        transition: none;
+    }
+
+}
